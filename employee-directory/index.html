@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Employee Directory</title>
+    <link rel="stylesheet" href="./static/css/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1 class="employee-heading">Employee Directory</h1>
+      <div class="controls">
+        <input
+          type="text"
+          id="search-input"
+          placeholder="Search by name or email" 
+          class="input-element"
+        />
+        <button id="filter-btn">Filter</button>
+      </div>
+    </header>
+
+  <div id="filter-form" class="hidden filter-box">
+  <h3>Filter Employees</h3>
+  <input type="text" id="filter-firstname" placeholder="First Name" />
+  <input type="text" id="filter-department" placeholder="Department" />
+  <input type="text" id="filter-role" placeholder="Role" />
+  <div style="margin-top: 10px;">
+    <button id="apply-filter-btn" class="blue-btn">Apply</button>
+    <button id="reset-filter-btn" class="gray-btn">Reset</button>
+  </div>
+  </div>
+
+
+    <div class="toolbar">
+      <label for="sort-select">Sort:</label>
+      <select id="sort-select" class="drop-down">
+        <option value="select">--Select--</option>
+        <option value="firstName">First Name</option>
+        <option value="department">Department</option>
+      </select>
+
+      <label for="show-count">Show:</label>
+      <select id="show-count">
+        <option value="5">5</option>
+        <option value="10" selected>10</option>
+        <option value="25">25</option>
+      </select>
+    <button id="prev-btn">Previous</button>
+    <span id="page-info"></span>
+    <button id="next-btn">Next</button>
+    
+
+      <button id="add-employee-btn" class="green-btn">Add Employee</button>
+    </div>
+
+    <main id="employee-list-container"></main>
+
+    <footer class="footer-element">
+      <p>© 2025 Employee Directory App. All rights reserved.</p>
+    </footer>
+
+    <!-- Modal -->
+    <div id="employee-modal" class="modal hidden">
+      <div class="modal-content">
+        <span id="modal-close" class="close-btn">&times;</span>
+        <h2>Add Employee</h2>
+        <form id="employee-form">
+          <input type="text" id="first-name" placeholder="First Name" required />
+          <input type="text" id="last-name" placeholder="Last Name" required /><br />
+          <input type="email" id="email" placeholder="Email" required /><br />
+          <input type="text" id="department" placeholder="Department" required /><br />
+          <input type="text" id="role" placeholder="Role" required />
+          <div class="form-actions">
+          
+            <button type="button" id="cancel-btn" class="cancel-button"> Cancel </button>
+            <button class = "button" type ="submit">Add</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="./static/js/data.js"></script>
+    <script src="./static/js/app.js"></script>
+  </body>
+</html>
